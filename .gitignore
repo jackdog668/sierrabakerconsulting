@@ -1,2 +1,7 @@
 .vercel
 .claude/
+
+# Lead data + local bundles — never commit (PII / not for public repo)
+dealer_leads.csv
+files.zip
+unzipped/

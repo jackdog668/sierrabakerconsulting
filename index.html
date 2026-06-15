@@ -249,6 +249,32 @@ body::before {
 /* Divider */
 .div { width: 60px; height: 3px; background: linear-gradient(90deg, var(--amber), var(--emerald)); border-radius: 2px; margin: 28px auto; }
 
+/* Transformation (before -> after) */
+.transform { margin-bottom: 22px; }
+.transform-head { text-align: center; margin-bottom: 26px; }
+.transform-head .sc-title { display: inline-block; }
+.transform-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+.t-card { margin: 0; }
+.t-imgwrap {
+    aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--card);
+}
+.t-imgwrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.5s ease; }
+.t-card:hover .t-imgwrap img { transform: scale(1.04); }
+.t-before .t-imgwrap { filter: saturate(0.82) contrast(0.98); }
+.t-card figcaption {
+    text-align: center; margin-top: 14px; font-family: 'JetBrains Mono', monospace;
+    font-size: 0.92rem; color: var(--ink); font-weight: 600;
+}
+.t-tag { display: block; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
+.t-tag-before { color: var(--amber); }
+.t-tag-after { color: var(--emerald); }
+.t-arrow { font-family: var(--serif); font-weight: 900; font-size: 2.4rem; color: var(--emerald); line-height: 1; align-self: center; }
+@media (max-width: 600px) {
+    .transform-grid { grid-template-columns: 1fr; gap: 8px; }
+    .t-arrow { transform: rotate(90deg); margin: 2px 0; }
+}
+
 /* CTA Button */
 .cta-btn {
     display: inline-block; background: var(--emerald); color: #FFFFFF; padding: 14px 32px;
@@ -314,6 +340,25 @@ body::before {
             <a href="/dealers" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--emerald); text-decoration: none; border-bottom: 1px solid rgba(14,122,95,0.35); padding-bottom: 2px;">Run a car dealership? See our dealer offer &rarr;</a>
         </div>
     </header>
+
+    <!-- Transformation: before -> after -->
+    <section class="transform reveal">
+        <div class="transform-head">
+            <span class="sc-label sl-y">The Shift</span>
+            <div class="sc-title">From doing it all to actually running it.</div>
+        </div>
+        <div class="transform-grid">
+            <figure class="t-card t-before">
+                <div class="t-imgwrap"><img src="assets/before-hustle.jpeg" alt="An overwhelmed founder with several arms at once juggling a laptop, cash, a planner, coffee, and a tablet." loading="lazy" width="736" height="981"></div>
+                <figcaption><span class="t-tag t-tag-before">Before</span> Being the software</figcaption>
+            </figure>
+            <div class="t-arrow" aria-hidden="true">&rarr;</div>
+            <figure class="t-card t-after">
+                <div class="t-imgwrap"><img src="assets/after-calm.jpeg" alt="A relaxed founder working calmly at a laptop while AI handles charts, messages, and notifications in the background." loading="lazy" width="736" height="736"></div>
+                <figcaption><span class="t-tag t-tag-after">After</span> Running the business</figcaption>
+            </figure>
+        </div>
+    </section>
 
     <!-- Section: The pitch -->
     <section class="sc reveal">
